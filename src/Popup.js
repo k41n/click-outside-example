@@ -1,9 +1,5 @@
-import { withCloseOnClickOutside } from "./withCloseOnClickOutside";
-
-const PopupBody = () => {
+export const Popup = () => {
   return (
     <div class="popup" />
   )
 }
-
-export const Popup = withCloseOnClickOutside(PopupBody);

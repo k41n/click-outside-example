@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Popup } from './Popup';
+import { useState } from "react";
+import { Popup } from "./Popup";
 
 import "./App.css";
+import { CloseOnClickOutside } from "./CloseOnClickOutside";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -10,7 +11,9 @@ const App = () => {
   return (
     <>
       <button onClick={handleClick}>Press me</button>
-      <Popup open={open} onClose={handleClose} />
+      <CloseOnClickOutside open={open} onClose={handleClose}>
+        <Popup />
+      </CloseOnClickOutside>
     </>
   );
 };
