@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Popup } from './Popup';
 
-function App() {
+import "./App.css";
+
+const App = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={handleClick}>Press me</button>
+      <Popup open={open} onClose={handleClose} />
+    </>
   );
-}
+};
 
 export default App;
